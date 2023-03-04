@@ -71,6 +71,6 @@ bool RepRow(char *pass){
             if(pass[k] == pass[k+1] && pass[k+1] == pass[k+2] && k+2 < strlen(pass)) return true;
         }
 
-        return false; 
+        return false;  
 }
            

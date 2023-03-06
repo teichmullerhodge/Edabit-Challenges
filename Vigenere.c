@@ -76,26 +76,32 @@ Return the ciphertext if the input is a message, or the deciphered text
 
 
 
-void Usage(void){
+void 
+_Usage( void )
+{
 
         puts("Usage: <Message> <Keyword>");
         exit(-1);
 }
     
 
-int main(int argc, char *argv[]){
+ 
+int main( int argc, char *argv[] )
+{
+        _InitVigenereTable();
+       
+        if(argc!=3)            _Usage();
+        size_t   _len = strlen(argv[1]);
+        char __Encrypt[MAX_LEN_KEYWORD];
 
-        InitVigenereTable();
-        
-        if(argc != 3) Usage();
-        size_t len = strlen(argv[1]);
-        char Encrypt[MAX_LEN_KEYWORD];
+        CypherVigenere(argv[1], _len, argv[2], __Encrypt);
+                                                  NEWLINE;
 
-        CypherVigenere(argv[1], len, argv[2], Encrypt);
-        NEWLINE;
 }
 
-char *CypherVigenere(char *Message, size_t len, char *Keyword, char *Encrypted){        
+char *CypherVigenere(char *Message, size_t len, 
+                        char *Keyword, char *Encrypted)
+{        
 
         char Key[MAX_LEN_KEYWORD];
         

@@ -40,21 +40,11 @@ fn OddishEven(mut num: i32) -> i32 {
 
 	}
 
-	if sum % 2 == 0{ //case of sum is even.
+	else{ //case of sum is even.
 
 		println!("Even!");
 		return 0;
 
 	}
 	
-	else{
-		println!("How in the name of god this happened?");
-		return -1; 
-		
-		/* For some reason YOUR function
-		has to have a return for all possibilities. 
-		BUT THERE'S NO POSSIBILITY OF YOU GETTING TO THIS POINT. */
-
-			}
-
 }
